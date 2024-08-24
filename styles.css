@@ -1,0 +1,131 @@
+body {
+    max-width: 900px;
+    /* Make the page wider */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    gap: 30px;
+    /* Space between the columns */
+    margin-bottom: 20px;
+}
+
+.left-column {
+    flex: 1;
+    /* Takes up equal space with right column */
+    max-width: 250px;
+}
+
+.right-column {
+    flex: 2;
+    /* Takes more space for bio */
+}
+
+.right-column h2 {
+    margin-top: 0;
+}
+
+.headshot {
+    width: 100%;
+    /* Make the image as wide as the column */
+    max-width: 240px;
+    /* Limit max size */
+    border-radius: 8px;
+    /* Rounded corners for headshot */
+    margin-bottom: 10px;
+    margin-top: 6px;
+    /* Space below the image */
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    /* Centers the icons horizontally */
+    gap: 10px;
+    /* Space between icons */
+    margin-bottom: 10px;
+    /* Space below icons */
+}
+
+.social-icons a {
+    text-decoration: none;
+    /* Removes underline from links */
+}
+
+.social-icons i {
+    font-size: 20px;
+    /* Size of the icons */
+    color: #333;
+    /* Minimalist color (dark gray) */
+    transition: color 0.3s;
+    /* Smooth transition for hover effect */
+}
+
+.social-icons i:hover {
+    color: #0073b1;
+    /* Slight color change on hover (e.g., LinkedIn blue) */
+}
+
+
+.contact-info {
+    margin-top: 10px;
+    /* Space above contact info */
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #0000EE;
+    /* Default link color */
+}
+.news-date {
+    font-weight: bold; /* Make the date bold */
+    /* color: #555; Use a medium gray for a subtle, distinct look */
+    margin-right: 10px; /* Space between the date and the news text */
+}
+.publication-list {
+    list-style: disc; /* Adds bullet points */
+    padding-left: 20px; /* Indents the entire list */
+    margin: 0; /* Removes default margin */
+}
+
+.publication-list li {
+    margin-bottom: 15px; /* Space between each publication */
+}
+
+.publication-entry {
+    margin: 0; /* Removes default margin for paragraphs */
+    line-height: 1.4; /* Reduces line spacing within the same publication */
+}
+
+.publication-list a {
+    text-decoration: none; /* Removes underline from links */
+    color: #0073b1; /* Default link color */
+    margin-right: 5px; /* Reduces space between links */
+}
+
+.publication-list a:last-child {
+    margin-right: 0; /* Removes right margin for the last link */
+}
+
+.publication-list a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+.publication-list strong {
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+.publication-list em {
+    font-style: italic; /* Italicize publication venue */
+}
