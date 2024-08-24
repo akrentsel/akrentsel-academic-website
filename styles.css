@@ -62,16 +62,28 @@ header {
 
 .social-icons i {
     font-size: 20px;
-    /* Size of the icons */
-    color: #333;
-    /* Minimalist color (dark gray) */
-    transition: color 0.3s;
-    /* Smooth transition for hover effect */
+    color: #333; /* Original dark gray color */
+    /* transition: color 0.3s; Smooth transition for color change */
 }
 
-.social-icons i:hover {
-    color: #0073b1;
+
+i.fas:hover:not(#dark-mode-toggle i), 
+i.fab:hover:not(#dark-mode-toggle i) {
+    /* color: #0073b1; */
+    color: #a80000;
     /* Slight color change on hover (e.g., LinkedIn blue) */
+    transition: color 0.3s;
+}
+
+/* Apply a lighter color to all Font Awesome icons when dark mode is active */
+body.latex-dark i.fas,
+body.latex-dark i.fab {
+    color: #bbb; /* Lighter color for better visibility in dark mode */
+}
+
+body.latex-dark i.fas:hover:not(#dark-mode-toggle i),
+body.latex-dark i.fab:hover:not(#dark-mode-toggle i) {
+    color: #f1f1f1; /* Lighter color on hover */
 }
 
 
@@ -84,10 +96,6 @@ header {
     margin: 5px 0;
 }
 
-.contact-info a {
-    color: #0000EE;
-    /* Default link color */
-}
 .news-date {
     font-weight: bold; /* Make the date bold */
     /* color: #555; Use a medium gray for a subtle, distinct look */
@@ -110,7 +118,7 @@ header {
 
 .publication-list a {
     text-decoration: none; /* Removes underline from links */
-    color: #0073b1; /* Default link color */
+    /*color: #0073b1; /* Default link color */
     margin-right: 5px; /* Reduces space between links */
 }
 
@@ -129,3 +137,52 @@ header {
 .publication-list em {
     font-style: italic; /* Italicize publication venue */
 }
+
+.name-and-toggle {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Pushes the button to the right */
+    align-items: center; /* Vertically centers the items */
+}
+
+/* Adjust the toggle button size and style */
+#dark-mode-toggle {
+    background-color: #333; /* Dark gray background color */
+    color: white; /* White text color */
+    border: none; /* Removes border */
+    padding: 5px 10px; /* Adds padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
+    margin: 0; /* Removes default margin */
+    line-height: 1; /* Ensures the button height matches the text line height */
+    font-size: 20px; /* Matches the text size */
+    width: 36px; /* Fixed width to keep button size consistent */
+    height: 30px; /* Fixed height to keep button size consistent */
+    display: flex; /* Aligns icon in the center */
+    justify-content: center; /* Centers icon horizontally */
+    align-items: center; /* Centers icon vertically */
+}
+
+/* Add this rule to adjust the toggle button color in dark mode */
+body.latex-dark #dark-mode-toggle {
+    background-color: #3a3a3a; /* Lighter gray background color for dark mode */
+    border: 1px solid #aaa; /* Light grey outline for the button */
+}
+
+/* Add this rule to adjust the toggle button color in dark mode */
+body.latex-dark #dark-mode-toggle:hover {
+    background-color: #555; /* Slightly lighter gray on hover */
+    color: #f1f1f1; /* Slightly lighter text color on hover */
+}
+
+#dark-mode-toggle:hover {
+    background-color: #555; /* Slightly lighter gray on hover */
+    color: #f1f1f1; /* Slightly lighter text color on hover */
+}
+
+.right-column h2 {
+    margin: 0; /* Removes all default margins */
+    padding: 0; /* Removes all default padding */
+    line-height: 1.2; /* Adjust the line height for better vertical spacing */
+}
+

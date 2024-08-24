@@ -47,8 +47,11 @@
         </div>
 
         <div class="right-column">
-            <!-- Bio Section -->
-            <h2>Alexander Krentsel</h2>
+            <!-- Name and Dark Mode Toggle -->
+            <div class="name-and-toggle">
+                <h2>Alexander Krentsel</h2>
+                <button id="dark-mode-toggle"><i class="fas fa-moon"></i> <!-- Dark mode icon --></button>
+            </div>
             <p>I am a research engineer in the <a href="https://techsysinfra.google/research/" target="_blank">Systems
                     Research Group at Google</a>, and a third-year PhD student at UC Berkeley in the <a
                     href="https://netsys.cs.berkeley.edu/" target="_blank">NetSys lab</a>, advised by <a
@@ -120,19 +123,35 @@
 
 
     <!-- Talks Section -->
-    <!-- <section>
+    <section>
         <h2>Talks</h2>
         <ul>
             <li>Talk 1</li>
             <li>Talk 2</li>
         </ul>
-    </section> -->
+    </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; Alexander Krentsel 2024, source code at <a href="https://github.com/akrentsel/akrentsel-academic-website" target="_blank" style="color: #333; text-decoration: none;  font-size: 16px;"><i class="fab fa-github"></i></a>.</p>
         <!-- TODO: add link to github page for this website, and to the library I used. -->
     </footer>
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        document.querySelector("#dark-mode-toggle").addEventListener('click', () => {
+            document.body.classList.toggle("latex-dark");
+
+            const icon = document.querySelector("#dark-mode-toggle i");
+            if (document.body.classList.contains("latex-dark")) {
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun"); // Light mode icon
+            } else {
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon"); // Dark mode icon
+            }
+        });
+    </script>
+
 </body>
 
 </html>
