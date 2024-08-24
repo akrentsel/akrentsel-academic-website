@@ -186,3 +186,38 @@ body.latex-dark #dark-mode-toggle:hover {
     line-height: 1.2; /* Adjust the line height for better vertical spacing */
 }
 
+.talks-list {
+    list-style: disc; /* Adds bullet points */
+    padding-left: 20px; /* Indents the entire list */
+    margin: 0; /* Removes default margin */
+}
+
+.talks-list > li {
+    margin-bottom: 15px; /* Reduced space between each talk */
+}
+
+
+.talk-title {
+    /* font-size: 18px; /* Increases font size for the talk title */
+    margin: 0 0 3px 0; /* Reduced space below the title */
+}
+
+.talk-title a {
+    text-decoration: none; /* Removes underline from link */
+    color: #0073b1; /* Adds color to the slides link */
+}
+
+.talk-details {
+    list-style: none; /* Removes default bullet points for sublist */
+    padding-left: 20px; /* Indents the details list */
+    margin: 0; /* Removes default margin */
+}
+
+.talk-details li {
+    margin-top: -6px; /* Reduced space between each instance */
+}
+
+footer {
+    padding-top: 5px; /* Increased padding at the top of the footer */ 
+}
+
