@@ -182,6 +182,24 @@
     </footer>
     <!-- JavaScript for Dark Mode Toggle -->
     <script>
+        // Detect user's system theme preference
+        function applyPreferredTheme() {
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (prefersDarkScheme) {
+                document.body.classList.add('latex-dark');
+                document.querySelector("#dark-mode-toggle i").classList.remove("fa-moon");
+                document.querySelector("#dark-mode-toggle i").classList.add("fa-sun");
+            } else {
+                document.body.classList.remove('latex-dark');
+                document.querySelector("#dark-mode-toggle i").classList.remove("fa-sun");
+                document.querySelector("#dark-mode-toggle i").classList.add("fa-moon");
+            }
+        }
+
+        // Apply the preferred theme on initial load
+        applyPreferredTheme();
+        
         document.querySelector("#dark-mode-toggle").addEventListener('click', () => {
             document.body.classList.toggle("latex-dark");
 
