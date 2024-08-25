@@ -204,7 +204,6 @@ body.latex-dark #dark-mode-toggle:hover {
 
 .talk-title a {
     text-decoration: none; /* Removes underline from link */
-    color: #0073b1; /* Adds color to the slides link */
 }
 
 .talk-details {
