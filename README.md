@@ -34,3 +34,5 @@ fi
 ```
 
 This will check for any changes that I pushed to GitHub and if there are any, pull them down and email me to let me know the web server has been updated.
+
+Note: Make sure to `chmod -R a+rx .` in the directory before pushing – all files need to be reachable!
