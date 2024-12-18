@@ -1,26 +1,27 @@
 body {
     max-width: 900px;
-    /* Make the page wider */
     margin: 0 auto;
     padding: 20px;
+}
+
+/* Gen Z mode: transforms all text to lowercase */
+body.genz-mode {
+    text-transform: lowercase;
 }
 
 header {
     display: flex;
     gap: 30px;
-    /* Space between the columns */
     margin-bottom: 20px;
 }
 
 .left-column {
     flex: 1;
-    /* Takes up equal space with right column */
     max-width: 250px;
 }
 
 .right-column {
     flex: 2;
-    /* Takes more space for bio */
 }
 
 .right-column h2 {
@@ -29,14 +30,10 @@ header {
 
 .headshot {
     width: 100%;
-    /* Make the image as wide as the column */
     max-width: 240px;
-    /* Limit max size */
     border-radius: 8px;
-    /* Rounded corners for headshot */
     margin-bottom: 10px;
     margin-top: 6px;
-    /* Space below the image */
     user-drag: none;
     -webkit-user-drag: none;
     user-select: none;
@@ -48,49 +45,37 @@ header {
 .social-icons {
     display: flex;
     justify-content: left;
-    /* Centers the icons horizontally */
     gap: 10px;
-    /* Space between icons */
     margin-bottom: 10px;
-    /* Space below icons */
 }
 
 .social-icons a {
     text-decoration: none;
-    /* Removes underline from links */
 }
 
 .social-icons i {
     font-size: 20px;
-    color: #333; /* Original dark gray color */
-    /* transition: color 0.3s; Smooth transition for color change */
+    color: #333;
 }
 
-
-i.fas:hover:not(#dark-mode-toggle i), 
+i.fas:hover:not(#dark-mode-toggle i),
 i.fab:hover:not(#dark-mode-toggle i) {
-    /* color: #0073b1; */
     color: #a80000;
-    /* Slight color change on hover (e.g., LinkedIn blue) */
     transition: color 0.3s;
 }
 
-/* Apply a lighter color to all Font Awesome icons when dark mode is active */
 body.latex-dark i.fas,
 body.latex-dark i.fab {
-    color: #bbb; /* Lighter color for better visibility in dark mode */
+    color: #bbb;
 }
 
 body.latex-dark i.fas:hover:not(#dark-mode-toggle i),
 body.latex-dark i.fab:hover:not(#dark-mode-toggle i) {
-    /* color: #f1f1f1; /* Lighter color on hover */
     color: #95daf3;
 }
 
-
 .contact-info {
     margin-top: 10px;
-    /* Space above contact info */
 }
 
 .contact-info p {
@@ -98,126 +83,157 @@ body.latex-dark i.fab:hover:not(#dark-mode-toggle i) {
 }
 
 .news-date {
-    font-weight: bold; /* Make the date bold */
-    /* color: #555; Use a medium gray for a subtle, distinct look */
-    margin-right: 10px; /* Space between the date and the news text */
+    font-weight: bold;
+    margin-right: 10px;
 }
+
 .publication-list {
-    list-style: disc; /* Adds bullet points */
-    padding-left: 20px; /* Indents the entire list */
-    margin: 0; /* Removes default margin */
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
 }
 
 .publication-list li {
-    margin-bottom: 15px; /* Space between each publication */
+    margin-bottom: 15px;
 }
 
 .publication-entry {
-    margin: 0; /* Removes default margin for paragraphs */
-    line-height: 1.4; /* Reduces line spacing within the same publication */
+    margin: 0;
+    line-height: 1.4;
 }
 
 .publication-list a {
-    text-decoration: none; /* Removes underline from links */
-    /*color: #0073b1; /* Default link color */
-    margin-right: 5px; /* Reduces space between links */
-}
-
-.publication-list a:last-child {
-    margin-right: 0; /* Removes right margin for the last link */
+    text-decoration: none;
+    margin-right: 5px;
 }
 
 .publication-list a:hover {
-    text-decoration: underline; /* Underline on hover for links */
+    text-decoration: underline;
 }
 
 .publication-list strong {
-    font-weight: bold; /* Bold font for emphasis */
+    font-weight: bold;
 }
 
 .publication-list em {
-    font-style: italic; /* Italicize publication venue */
+    font-style: italic;
 }
 
 .name-and-toggle {
-    display: flex; /* Use Flexbox for layout */
-    justify-content: space-between; /* Pushes the button to the right */
-    align-items: center; /* Vertically centers the items */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
-/* Adjust the toggle button size and style */
+.toggle-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: 8px;
+}
+
 #dark-mode-toggle {
-    background-color: #333; /* Dark gray background color */
-    color: white; /* White text color */
-    border: none; /* Removes border */
-    padding: 5px 10px; /* Adds padding for button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Changes cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
-    margin: 0; /* Removes default margin */
-    line-height: 1; /* Ensures the button height matches the text line height */
-    font-size: 20px; /* Matches the text size */
-    width: 36px; /* Fixed width to keep button size consistent */
-    height: 30px; /* Fixed height to keep button size consistent */
-    display: flex; /* Aligns icon in the center */
-    justify-content: center; /* Centers icon horizontally */
-    align-items: center; /* Centers icon vertically */
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    line-height: 1;
+    font-size: 20px;
+    width: 36px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Add this rule to adjust the toggle button color in dark mode */
+/* Gen Z toggle styling */
+#genz-mode-toggle {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    line-height: 1;
+    font-size: 16px;
+    width: 36px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style when Gen Z mode is active */
+#genz-mode-toggle.active {
+    background-color: #666; /* or any distinct color to show it's active */
+    border: 1px solid #aaa; /* gives an outline even in light mode */
+}
+
+/* Outline around Gen Z button in dark mode */
+body.latex-dark #genz-mode-toggle {
+    border: 1px solid #aaa; /* same as dark-mode-toggle */
+}
+
 body.latex-dark #dark-mode-toggle {
-    background-color: #3a3a3a; /* Lighter gray background color for dark mode */
-    border: 1px solid #aaa; /* Light grey outline for the button */
+    background-color: #3a3a3a;
+    border: 1px solid #aaa;
 }
 
-/* Add this rule to adjust the toggle button color in dark mode */
 body.latex-dark #dark-mode-toggle:hover {
-    background-color: #555; /* Slightly lighter gray on hover */
-    color: #f1f1f1; /* Slightly lighter text color on hover */
+    background-color: #555;
+    color: #f1f1f1;
 }
 
 #dark-mode-toggle:hover {
-    background-color: #555; /* Slightly lighter gray on hover */
-    color: #f1f1f1; /* Slightly lighter text color on hover */
+    background-color: #555;
+    color: #f1f1f1;
+}
+
+/* Hover for Gen Z mode toggle */
+#genz-mode-toggle:hover {
+    background-color: #555;
+    color: #f1f1f1;
 }
 
 .right-column h2 {
-    margin: 0; /* Removes all default margins */
-    padding: 0; /* Removes all default padding */
-    line-height: 1.2; /* Adjust the line height for better vertical spacing */
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
 }
 
 .talks-list {
-    list-style: disc; /* Adds bullet points */
-    padding-left: 20px; /* Indents the entire list */
-    margin: 0; /* Removes default margin */
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
 }
 
 .talks-list > li {
-    margin-bottom: 15px; /* Reduced space between each talk */
+    margin-bottom: 15px;
 }
 
-
 .talk-title {
-    /* font-size: 18px; /* Increases font size for the talk title */
-    margin: 0 0 3px 0; /* Reduced space below the title */
+    margin: 0 0 3px 0;
 }
 
 .talk-title a {
-    text-decoration: none; /* Removes underline from link */
+    text-decoration: none;
 }
 
 .talk-details {
-    list-style: none; /* Removes default bullet points for sublist */
-    padding-left: 20px; /* Indents the details list */
-    margin: 0; /* Removes default margin */
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
 }
 
 .talk-details li {
-    margin-top: -6px; /* Reduced space between each instance */
+    margin-top: -6px;
 }
 
 footer {
-    padding-top: 5px; /* Increased padding at the top of the footer */ 
+    padding-top: 5px;
 }
-
