@@ -1,6 +1,6 @@
 # Simple Academic Website
 
-This is the source code for my academic wbsite, which you can view at [https://people.eecs.berkeley.edu/~akrentsel].
+This is the source code for my academic wbsite, which you can view at [https://people.eecs.berkeley.edu/~akrentsel](https://people.eecs.berkeley.edu/~akrentsel).
 
 I made this because all of the existing templates felt way too clunky, I wanted something nice and clean. 
 
