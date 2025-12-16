@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Decentralized SDN Architecture for the WAN</title>
+    <!-- Link to the latex.css stylesheet -->
+    <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .authors {
+            margin-bottom: 20px;
+        }
+        .author {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .affiliation {
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        .figure {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .figure img, .figure video {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .figure-caption {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .side-by-side .figure {
+            flex-basis: 48%;
+        }
+        .animation {
+            max-width: 100%;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .animation video {
+            max-width: 100%;
+            height: auto;
+        }
+        .name-and-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #dark-mode-toggle {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            line-height: 1;
+            font-size: 20px;
+            width: 36px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body.latex-dark #dark-mode-toggle {
+            background-color: #3a3a3a;
+            border: 1px solid #aaa;
+        }
+        body.latex-dark #dark-mode-toggle:hover {
+            background-color: #555;
+            color: #f1f1f1;
+        }
+        #dark-mode-toggle:hover {
+            background-color: #555;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <div class="name-and-toggle">
+            <h1>A Decentralized SDN Architecture for the WAN</h1>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+        
+        <div class="authors">
+            <div class="author">Alexander Krentsel<sup>1,2</sup></div>
+            <div class="author">Nitika Saran<sup>3*</sup></div>
+            <div class="author">Bikash Koley<sup>1</sup></div>
+            <div class="author">Subhasree Mandal<sup>1</sup></div>
+            <div class="author">Ashok Narayanan<sup>1</sup></div>
+            <div class="author">Sylvia Ratnasamy<sup>1,2</sup></div>
+            <div class="author">Ali Al-Shabibi<sup>1</sup></div>
+            <div class="author">Anees Shaikh<sup>1</sup></div>
+            <div class="author">Rob Shakir<sup>1</sup></div>
+            <div class="author">Ankit Singla<sup>1</sup></div>
+            <div class="author">Hakim Weatherspoon<sup>3</sup></div>
+        </div>
+        
+        <div class="affiliation">
+            <sup>1</sup>Google, <sup>2</sup>UC Berkeley, <sup>3</sup>Cornell<br>
+            <sup>*</sup>work done while at Google
+        </div>
+        
+        <h2>Motivation</h2>
+        <p>
+            Despite significant efforts, modern WANs remain vulnerable to failure, with complex outages persisting over time. Our work aims to address this challenge by simplifying the network architecture.
+        </p>
+        
+        <div class="figure">
+            <img src="/api/placeholder/800/400" alt="Historical outage frequency in our WAN">
+            <div class="figure-caption">Figure 1: Historical outage frequency in our WAN. Outages are classified internally based on several factors, including perceived user impact, duration, and blast radius (single or multi-region).</div>
+        </div>
+
+        <h2>From Centralized to Decentralized SDN</h2>
+        <p>
+            We propose a transition from centralized SDN to a decentralized architecture where the controller functionality is replicated and moved onto the routers.
+        </p>
+        
+        <div class="animation">
+            <video autoplay loop muted playsinline>
+                <source src="assets/csdn-to-dsdn-animation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="figure-caption">Figure 2: Animation showing the transition from centralized SDN to decentralized SDN.</div>
+        </div>
+
+        <h2>Current SDN WAN Architecture</h2>
+        <p>
+            Current SDN WAN architectures introduce significant complexity, with multiple components and dependencies that can lead to failures.
+        </p>
+        
+        <div class="figure">
+            <img src="/api/placeholder/800/500" alt="Conceptual diagram of a typical large-scale WAN architecture deployment">
+            <div class="figure-caption">Figure 3: Conceptual diagram of a typical large-scale WAN architecture deployment, with external dependencies shown in green and on-box dependencies shown in blue.</div>
+        </div>
+
+        <h2>Our Approach: Decentralized SDN (dSDN)</h2>
+        <p>
+            We propose dSDN, a novel architecture that moves SDN control logic to run within routers, eliminating the control plane's reliance on external infrastructure and restoring fate-sharing between control and data planes.
+        </p>
+        
+        <div class="figure">
+            <img src="/api/placeholder/800/400" alt="Diagram of dSDN's system architecture">
+            <div class="figure-caption">Figure 4: Diagram of dSDN's system architecture.</div>
+        </div>
+
+        <h2>Key Components of dSDN</h2>
+        <ol>
+            <li>Building a global view through Node State Updates</li>
+            <li>Each node computes all paths locally</li>
+            <li>Forwarding follows source routes</li>
+        </ol>
+
+        <div class="side-by-side">
+            <div class="figure">
+                <img src="/api/placeholder/400/300" alt="Building a global view">
+                <div class="figure-caption">Figure 5: Building a global view</div>
+            </div>
+            <div class="figure">
+                <img src="/api/placeholder/400/300" alt="Each node computes all paths">
+                <div class="figure-caption">Figure 6: Each node computes all paths</div>
+            </div>
+        </div>
+
+        <div class="figure">
+            <img src="/api/placeholder/800/400" alt="Forwarding follows source route">
+            <div class="figure-caption">Figure 7: Forwarding follows source route</div>
+        </div>
+
+        <h2>Performance Evaluation</h2>
+        <p>
+            We evaluated dSDN against centralized SDN (cSDN) and RSVP-TE in terms of convergence time and impact on traffic.
+        </p>
+
+        <div class="side-by-side">
+            <div class="figure">
+                <img src="/api/placeholder/400/300" alt="Convergence Time Comparison">
+                <div class="figure-caption">Figure 8: Individual components of convergence time in B4 for cSDN vs. dSDN.</div>
+            </div>
+            <div class="figure">
+                <img src="/api/placeholder/400/300" alt="Total convergence time in B2 for RSVP-TE vs. dSDN">
+                <div class="figure-caption">Figure 9: Total convergence time in B2 for RSVP-TE vs. dSDN.</div>
+            </div>
+        </div>
+
+        <div class="figure">
+            <img src="/api/placeholder/800/400" alt="Bad Seconds distribution for cSDN and dSDN">
+            <div class="figure-caption">Figure 10: Bad Seconds distribution for cSDN and dSDN, for different traffic classes.</div>
+        </div>
+
+        <h2>Key Results</h2>
+        <ul>
+            <li>dSDN achieves up to 120-150x faster convergence times than cSDN</li>
+            <li>dSDN sees significantly lower impact (measured in bad seconds) for all traffic priorities</li>
+            <li>dSDN maintains its performance advantage even under high churn rates</li>
+            <li>dSDN is practical to implement on current router hardware and scales well with network growth</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>
+            dSDN represents a new point in the design space that achieves the best of both centralized SDN and distributed protocols. It maintains the benefits of SDN while significantly simplifying the control plane infrastructure and improving convergence performance.
+        </p>
+        
+        <p>
+            For more details, please refer to our <a href="assets/krentsel-decentralized-sdn-sigcomm24.pdf">full paper</a> or check out the <a href="assets/krentsel-dsdn-sigcomm24-talk.pdf">presentation slides</a>.
+        </p>
+    </article>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        const icon = darkModeToggle.querySelector('i');
+
+        // Check for saved theme preference or default to light mode
+        if (localStorage.getItem('theme') === 'latex-dark') {
+            body.classList.add('latex-dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('latex-dark');
+            if (body.classList.contains('latex-dark')) {
+                localStorage.setItem('theme', 'latex-dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                localStorage.setItem('theme', 'latex-light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+    </script>
+</body>
+</html>
