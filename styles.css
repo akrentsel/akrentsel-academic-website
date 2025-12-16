@@ -234,6 +234,53 @@ body.latex-dark #dark-mode-toggle:hover {
     margin-top: -6px;
 }
 
+.music-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0 0 0;
+}
+
+.music-list li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.performance-date {
+    font-weight: bold;
+    min-width: 85px;
+    display: inline-block;
+}
+
+.performance-group {
+    font-style: italic;
+}
+
+.performance-repertoire {
+    font-size: 0.95em;
+    color: #666;
+}
+
+body.latex-dark .performance-repertoire {
+    color: #999;
+}
+
+.performance-venue {
+    color: #555;
+}
+
+body.latex-dark .performance-venue {
+    color: #aaa;
+}
+
+.music-list a {
+    text-decoration: none;
+    margin-right: 3px;
+}
+
+.music-list a:hover {
+    text-decoration: underline;
+}
+
 footer {
     padding-top: 5px;
 }
